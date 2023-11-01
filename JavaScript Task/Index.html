@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Assignments</h1>
+
+<p>Select your choice</p>
+
+
+
+<button style="background-color: chartreuse;" onclick="reverse()">Reverse word</button>
+
+
+<button style="background-color: orange;" onclick="sortArrayInDecending()">Sort Array In Decending</button>
+
+<p id="demo"></p>
+
+<script>
+function reverseWordsInSentence(sentence) {
+    const words = sentence.split(' ');
+    const reversedWords = words.map(word => {
+        return word.split('').reverse().join('');
+    });
+    return reversedWords.join(' ');
+}
+function reverse(){
+const inputSentence = prompt("Enter a sentence:");
+if (inputSentence) {
+    const reversedSentence = reverseWordsInSentence(inputSentence);
+    console.log("Reversed sentence: " + reversedSentence);
+} else {
+    console.log("No input provided.");
+}
+}
+
+function sortArrayInDecending(){
+    const numbers = prompt("Enter numbers separated by commas:").split(',').map(Number);
+
+numbers.sort(function(a, b) {
+    return b - a;
+});
+
+console.log("Sorted in descending order:", numbers);
+}
+</script>
+
+</body>
+</html>
